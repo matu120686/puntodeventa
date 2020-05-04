@@ -21,29 +21,75 @@
   <!-- Main content -->
   <section class="content">
 
-    <!-- Default box -->
     <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">Title</h3>
 
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                  title="Collapse">
-            <i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fa fa-times"></i></button>
-        </div>
+      <div class="box-header with-border">
+  
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
+          
+          Agregar categoría
+
+        </button>
+
       </div>
+
       <div class="box-body">
-        Start creating your amazing application!
+        
+       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+         
+        <thead>
+         
+         <tr>
+           
+           <th style="width:10px">#</th>
+           <th>Categoria</th>
+           <th>Acciones</th>
+
+         </tr> 
+
+        </thead>
+
+        <tbody>
+
+        <?php
+
+          $item = null;
+          $valor = null;
+
+          $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+          foreach ($categorias as $key => $value) {
+           
+            echo ' <tr>
+
+                    <td>'.($key+1).'</td>
+
+                    <td class="text-uppercase">'.$value["categoria"].'</td>
+
+                    <td>
+
+                      <div class="btn-group">
+                          
+                        <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>
+
+                        <button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>
+
+                      </div>  
+
+                    </td>
+
+                  </tr>';
+          }
+
+        ?>
+
+        </tbody>
+
+       </table>
+
       </div>
-      <!-- /.box-body -->
-      <div class="box-footer">
-        Footer
-      </div>
-      <!-- /.box-footer-->
+
     </div>
-    <!-- /.box -->
 
   </section>
   <!-- /.content -->
