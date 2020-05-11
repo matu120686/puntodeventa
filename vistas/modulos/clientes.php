@@ -130,56 +130,67 @@
 
                 <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
                   <input type="text" class="form-control input-lg" name="nuevaCliente" placeholder="Ingresar Nombre" required>
 
                 </div>
 
+              </div>
+
                 <!-- ENTRADA PARA EL DOCUMENTO ID -->
-                <div class="input-group">
+                <div class="form-group">
+                  <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-address-card-o"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                  <input type="number" min="0"  class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar Documento" required>
+                    <input type="number" min="0"  class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar Documento" required>
 
+                  </div>
                 </div>
 
                 <!-- ENTRADA PARA EL EMAIL -->
-                <div class="input-group">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 
-                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
-
-                  <input type="email"  class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar Email" required>
-
+                    <input type="email"  class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar Email" required>
+                  </div>
                 </div>
 
                 <!-- ENTRADA PARA EL TELEFONO -->
-                <div class="input-group">
+                <div class="form-group">
+                  <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
 
-                  <input type="text"   class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar Telefono" data-inputmask="'mask':'(999) 999-999999'" data-mask required>
-                                                                                                                                                                                           
+                    <input type="text"   class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar Telefono" data-inputmask="'mask':'(999) 999-999999'" data-mask required>
+                                                                                                                                                                                            
+                  </div>
                 </div>
 
-                <!-- ENTRADA PARA EL Direccion -->
-                <div class="input-group">
+                <!-- ENTRADA PARA LA DIRECCION -->
+                <div class="form-group">
+                  <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
 
-                  <input type="text"  class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar Direccion" required>
+                    <input type="text"  class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar Direccion" required>
 
+                  </div>
                 </div>
 
-                <!-- ENTRADA PARA EL Direccion -->
-                <div class="input-group">
+                <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
+                <div class="form-group">
+                  <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
-                  <input type="text"  class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar Direccion" required>
+                    <input type="text"  class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar Fecha de Nacimiento" data-inputmask="'alias':'dd/mm/yyyy'" data-mask required>
 
+                  </div>
                 </div>
+
 
               </div>
 
@@ -195,7 +206,7 @@
 
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-            <button type="submit" class="btn btn-primary">Guardar categoría</button>
+            <button type="submit" class="btn btn-primary">Guardar Cliente</button>
 
           </div>
 

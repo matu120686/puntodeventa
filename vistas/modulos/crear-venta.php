@@ -21,30 +21,103 @@
   <!-- Main content -->
   <section class="content">
 
-    <!-- Default box -->
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">Title</h3>
+    <div class="row">
+      <!--====================================
+              EL FORMULARIO
+      =======================================-->
 
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                  title="Collapse">
-            <i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fa fa-times"></i></button>
-        </div>
+      <div class="col-lg-5 col-xs-12">
+
+      <div class="box box-success">
+
+         <div class="box-header with-border">
+
+           <div class="box-body">
+
+           <form role="form" method="post">
+
+             <div class="box">
+                <!--====================================
+                        ENTRADA DEL VENDEDOR
+                =======================================-->
+
+                <div class="form-group">
+
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-user"></i> Vendedor</span>
+                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="Usuario Administrador" readonly>
+
+                  </div>
+
+                </div>  
+
+                <!--====================================
+                        ENTRADA DEL VENDEDOR
+                =======================================-->
+
+                <div class="form-group">
+
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-key"></i> Codigo de Venta</span>
+                    <input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="0000001" readonly>
+
+                  </div>
+
+                </div> 
+                <!--====================================
+                        ENTRADA DEL CLIENTE 
+                =======================================-->
+
+                <div class="form-group">
+
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-users"></i> Agregar Cliente</span>
+
+                    <select  class="form-control" id="agregarCliente" name="agregarCliente" placeholder="Agregar Cliente" required>
+
+                    <option value="">Seleccionar Cliente</option>
+
+                    </select>
+                    
+                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" 
+                    data-target="#modalAgregarCliente" data-dismiss="modal" >Agregar Cliente</button> </span>
+
+                  </div>
+
+                </div>   
+
+
+
+             </div>
+
+           </form>
+
+           </div>
+
+         </div>
+
       </div>
-      <div class="box-body">
-        Start creating your amazing application!
+      
       </div>
-      <!-- /.box-body -->
-      <div class="box-footer">
-        Footer
-      </div>
-      <!-- /.box-footer-->
+      <!--====================================
+              LA TABLA DE PRODUCTOS
+      =======================================-->
+      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+      <div class="box box-warning">
+
+</div>
+
+
+      </div>    
+
+      
+
     </div>
-    <!-- /.box -->
 
+   
   </section>
   <!-- /.content -->
 </div>
