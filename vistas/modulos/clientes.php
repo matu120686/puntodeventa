@@ -58,29 +58,38 @@
 
           <tbody>
 
-            <tr>
-              <td> 1 </td>
-              <td> Matias Olivera </td>
-              <td> 32353151 </td>
-              <td> matu120686@gmail.com </td>
-              <td> 2645478957 </td>
-              <td> 12-06-1986 </td>
-              <td> 35000 </td>
-              <td> 20-04-2020</td>
-              <td> 12-12-1986 </td>
-              <td>
-                <div class="btn-group">
+          <?php
 
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+        
 
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+        $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
 
-                </div>
+       foreach ($usuarios as $key => $value){
+         
+          echo ' <tr>
+                  <td>'.($key+1).'</td>
+                  <td>'.$value["nombre"].'</td>
+                  <td>'.$value["documento"].'</td>';                 
 
-              </td>
+                  echo '<td>'.$value["email"].'</td>
+
+                  <td>
+
+                    <div class="btn-group">
+                        
+                      <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+
+                      <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+
+                    </div>  
+
+                  </td>
+
+                </tr>';
+        }
 
 
-            </tr>
+        ?> 
 
           </tbody>
 
@@ -132,7 +141,7 @@
 
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                  <input type="text" class="form-control input-lg" name="nuevaCliente" placeholder="Ingresar Nombre" required>
+                  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar Nombre" required>
 
                 </div>
 
@@ -186,7 +195,7 @@
 
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
-                    <input type="text"  class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar Fecha de Nacimiento" data-inputmask="'alias':'dd/mm/yyyy'" data-mask required>
+                    <input type="text"  class="form-control input-lg" name="NuevaFechaNacimiento" placeholder="Ingresar Fecha de Nacimiento" data-inputmask="'alias':'dd/mm/yyyy'" data-mask required>
 
                   </div>
                 </div>
@@ -212,8 +221,8 @@
 
           <?php
 
-          $crearCategoria = new ControladorCategorias();
-          $crearCategoria->ctrCrearCategoria();
+          $crearClientes = new ControladorClientes();
+          $crearClientes->ctrCrearClientes();
 
           ?>
 
