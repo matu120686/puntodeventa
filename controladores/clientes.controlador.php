@@ -80,18 +80,17 @@ class ControladorClientes
 
 
     public function ctrMostrarClientes($item, $valor){
+
         $tabla = "clientes";
 
-		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor);
+		$respuesta = ModeloClientes::mdlMostrarCliente($tabla, $item, $valor);
 
 		return $respuesta;
 
     }
 
 
-    public function  ctrEditarClientes(){
-        
-    }
+    
 
 
 

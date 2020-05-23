@@ -36,7 +36,7 @@
         MOSTRAR CLIENTES
     ======================================*/
 
-	static public function mdlMostrarProductos($tabla, $item, $valor){
+	static public function mdlMostrarCliente($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -47,6 +47,7 @@
 			$stmt -> execute();
 
 			return $stmt -> fetch();
+		
 
 		}else{
 

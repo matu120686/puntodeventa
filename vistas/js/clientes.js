@@ -1,14 +1,15 @@
-/*=====================================
-PIE DEL MODAL
-======================================*/
+/*=============================================
+EDITAR CLIENTE
+=============================================*/
+$(".tablas").on("click", ".btnEditarCliente", function() {
 
-$(".btnEditarCliente").click(function() {
     var idCliente = $(this).attr("idCliente");
 
     var datos = new FormData();
     datos.append("idCliente", idCliente);
 
     $.ajax({
+
         url: "ajax/clientes.ajax.php",
         method: "POST",
         data: datos,
@@ -18,11 +19,13 @@ $(".btnEditarCliente").click(function() {
         dataType: "json",
         success: function(respuesta) {
 
-            /*$("#editarCliente").val(respuesta["categoria"]);
-             $("#idCategoria").val(respuesta["id"]);//*/
-
-            console.log(respuesta);
-
+            $("#idCliente").val(respuesta["id"]);
+            $("#editarCliente").val(respuesta["nombre"]);
+            $("#editarDocumentoId").val(respuesta["documento"]);
+            $("#editarEmail").val(respuesta["email"]);
+            $("#editarTelefono").val(respuesta["telefono"]);
+            $("#editarDireccion").val(respuesta["direccion"]);
+            $("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);
         }
 
     })
