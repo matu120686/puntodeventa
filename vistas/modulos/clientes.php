@@ -86,13 +86,13 @@
           echo '
                   <td>
 
-                    <div class="btn-group">
-                        
-                      <button class="btn btn-warning btnEditarCliente" idCliente="'.$value["id_cliente"].'" data-toggle="modal" data-target="#modalEditarCliente"><i class="fa fa-pencil"></i></button>
+                  <div class="btn-group">
+                          
+                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
 
-                      <button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id_cliente"].'"><i class="fa fa-times"></i></button>
+                        <button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>
 
-                    </div>  
+                      </div>  
 
                   </td>
 
@@ -362,16 +362,19 @@
 
             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
 
-          </div>
-
+          </div>  
           <?php
 
-          /*$editarClientes = new ControladorClientes();
-          $editarClientes->ctrEditarClientes();*/
+          echo "holña";
+          
 
-          ?>
+          ?>       
 
         </form>
+
+          
+
+          
 
       </div>
 
