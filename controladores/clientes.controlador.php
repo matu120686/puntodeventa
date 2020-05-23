@@ -74,8 +74,24 @@ class ControladorClientes
         }
     }
 
+    /*=====================
+        MOSTRAR CLIENTES
+    =======================*/
 
-    public function 
+
+    public function ctrMostrarClientes($item, $valor){
+        $tabla = "clientes";
+
+		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor);
+
+		return $respuesta;
+
+    }
+
+
+    public function  ctrEditarClientes(){
+        
+    }
 
 
 

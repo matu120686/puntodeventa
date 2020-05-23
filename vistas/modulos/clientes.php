@@ -46,9 +46,10 @@
               <th>Documento </th>
               <th>Email </th>
               <th>Teléfono </th>
-              <th>Fecha de Nacimiento </th>
+              <th>Direccion </th>
+              <th>Fecha Nacimiento </th>
               <th>Total Compras </th>
-              <th>Última compra </th>
+              <th>Ultima Compra </th>              
               <th>Ingreso al Sistema </th>
               <th>Acciones </th>
 
@@ -59,27 +60,37 @@
           <tbody>
 
           <?php
+           $item = null;
+
+           $valor = null;
 
         
 
         $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
 
-       foreach ($usuarios as $key => $value){
+       foreach ($clientes as $key => $value){
          
           echo ' <tr>
                   <td>'.($key+1).'</td>
                   <td>'.$value["nombre"].'</td>
-                  <td>'.$value["documento"].'</td>';                 
+                  <td>'.$value["documento"].'</td>
+                  <td>'.$value["email"].'</td>
+                  <td>'.$value["telefono"].'</td>
+                  <td>'.$value["direccion"].'</td>
+                  <td>'.$value["fecha_nacimiento"].'</td>
+                  <td>'.$value["compras"].'</td>
+                  <td>'.$value["ultima_compra"].'</td>
+                  <td>'.$value["fecha"].'</td>' ;    
+                                  
 
-                  echo '<td>'.$value["email"].'</td>
-
+          echo '
                   <td>
 
                     <div class="btn-group">
                         
-                      <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+                      <button class="btn btn-warning btnEditarCliente" idCliente="'.$value["id_cliente"].'" data-toggle="modal" data-target="#modalEditarCliente"><i class="fa fa-pencil"></i></button>
 
-                      <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+                      <button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id_cliente"].'"><i class="fa fa-times"></i></button>
 
                     </div>  
 
@@ -233,6 +244,142 @@
     </div>
 
   </div>
+
+
+   <!--=====================================
+  MODAL EDITAR CLIENTE
+  ======================================-->
+
+  <div id="modalEditarCliente" class="modal fade" role="dialog">
+
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+
+        <form role="form" method="post">
+
+          <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+          <div class="modal-header" style="background:#3c8dbc; color:white">
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <h4 class="modal-title">Editar Cliente</h4>
+
+          </div>
+
+          <!--=====================================
+          CUERPO DEL MODAL
+          ======================================-->
+
+          <div class="modal-body">
+
+            <div class="box-body">
+
+              <!-- ENTRADA PARA EL NOMBRE -->
+
+              <div class="form-group">
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                  <input type="text" class="form-control input-lg" name="editarCliente" id="editarCliente" required>
+
+                </div>
+
+              </div>
+
+                <!-- ENTRADA PARA EL DOCUMENTO ID -->
+                <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+                    <input type="number" min="0"  class="form-control input-lg" name="editarDocumentoId" id="editarDocumentoId" required>
+
+                  </div>
+                </div>
+
+                <!-- ENTRADA PARA EL EMAIL -->
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+
+                    <input type="email"  class="form-control input-lg" name="editarEmail" id="editarEmail" required>
+                  </div>
+                </div>
+
+                <!-- ENTRADA PARA EL TELEFONO -->
+                <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
+                    <input type="text"   class="form-control input-lg" name="editarTelefono" id="editarTelefono" data-inputmask="'mask':'(999) 999-999999'" data-mask required>
+                                                                                                                                                                                            
+                  </div>
+                </div>
+
+                <!-- ENTRADA PARA LA DIRECCION -->
+                <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+
+                    <input type="text"  class="form-control input-lg" name="ecitarDireccion" id="ecitarDireccion" required>
+
+                  </div>
+                </div>
+
+                <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
+                <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+
+                    <input type="text"  class="form-control input-lg" name="ecitarFechaNacimiento" id="ecitarFechaNacimiento" data-inputmask="'alias':'dd/mm/yyyy'" data-mask required>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+
+          </div>
+
+          <?php
+
+          /*$editarClientes = new ControladorClientes();
+          $editarClientes->ctrEditarClientes();*/
+
+          ?>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
 
   <!-- /.content -->
 </div>
