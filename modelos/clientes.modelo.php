@@ -28,6 +28,7 @@
 		}
 
 		$stmt->close();
+		
 		$stmt = null;
 
 	}

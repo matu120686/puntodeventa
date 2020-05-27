@@ -1,7 +1,8 @@
-/*=============================================
+/*=====================================
 EDITAR CLIENTE
-=============================================*/
-$(".tablas").on("click", ".btnEditarCliente", function() {
+======================================*/
+
+$(".btnEditarCliente").click(function() {
 
     var idCliente = $(this).attr("idCliente");
 
@@ -17,17 +18,16 @@ $(".tablas").on("click", ".btnEditarCliente", function() {
         contentType: false,
         processData: false,
         dataType: "json",
+
         success: function(respuesta) {
 
-            $("#idCliente").val(respuesta["id"]);
-            $("#editarCliente").val(respuesta["nombre"]);
-            $("#editarDocumentoId").val(respuesta["documento"]);
-            $("#editarEmail").val(respuesta["email"]);
-            $("#editarTelefono").val(respuesta["telefono"]);
-            $("#editarDireccion").val(respuesta["direccion"]);
-            $("#editarFechaNacimiento").val(respuesta["fecha_nacimiento"]);
+            console.log("respuesta", respuesta);
+
         }
 
+
     })
+
+
 
 })

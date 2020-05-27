@@ -30,6 +30,7 @@ class AjaxCliente{
 /*=============================================
 EDITAR CLIENTE
 =============================================*/	
+echo $_POST["idCliente"];
 
 if(isset($_POST["idCliente"])){    
 
