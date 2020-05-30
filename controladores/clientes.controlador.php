@@ -79,7 +79,7 @@ class ControladorClientes
     =======================*/
 
 
-    public function ctrMostrarClientes($item, $valor){
+    static public function ctrMostrarClientes($item, $valor){
 
         $tabla = "clientes";
 

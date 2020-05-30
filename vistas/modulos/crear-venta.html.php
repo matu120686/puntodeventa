@@ -46,8 +46,8 @@
                         <div class="input-group">
 
                           <span class="input-group-addon"><i class="fa fa-user"></i> </span>
-                          <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
-                          <input type="hidden" name="idVendedor" value="<?php echo $_SESSION["id"]; ?>">
+                          <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="Usuario Administrador" readonly>
+
                         </div>
 
                       </div>  
@@ -61,36 +61,7 @@
                         <div class="input-group">
 
                           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-
-                          <?php
-
-                          $item = null;
-                          $valor = null;                       
-
-                          $ventas = ControladorVentas::ctrMostrarVentas($item, $valor);
-
-                          if (!$ventas) {
-
-                            echo '<input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="10001" readonly>'; 
-
-                          }else{
-
-                            foreach( $ventas as $key => $value){
-
-                            }
-
-                            $codigo = $valor["codigo"] +1;
-
-                            echo '<input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="'.$codigo.'" readonly>';
-
-
-                          }
-
-
-                          
-                          
-                          ?>
-                          
+                          <input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="0000001" readonly>
 
                         </div>
 
@@ -108,26 +79,6 @@
                           <select  class="form-control" id="agregarCliente" name="agregarCliente" placeholder="Agregar Cliente" required>
 
                           <option value="">Seleccionar Cliente</option>
-
-                          <?php
-
-                          $item = null;
-                          $valor = null;
-
-                          $categorias = ControladorClientes::ctrMostrarClientes($item,$valor);
-
-                          foreach( $categorias as $key => $valor){
-
-                            echo '<option value="'.$value["id"].'">'.$valor["nombre"].'</option>';
-
-
-                          }
-                          
-                          
-                          ?>
-
-                          
-
 
                           </select>
                           
@@ -331,166 +282,38 @@
               </tr>
 
               </thead>
-              <!---->
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px" alt=""></td>
+                  <td>00123</td>
+                  <td>lorem ipsum dolor sit amet</td>                  
+                  <td>20</td>
+                  <td>
+                    <div class="btn-group">
+
+                      <button type="button" class="btn btn-primary">Agregar</button>
+
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
 
             </table>
 
-        </div>
-
-      </div>
-
-    </div>  
-
-  </div>
-
-  </section>
-
-</div>
-
-<!--=====================================
-MODAL AGREGAR CLIENTE
-======================================-->
-
-<div id="modalAgregarCliente" class="modal fade" role="dialog">
-  
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-
-      <form role="form" method="post">
-
-        <!--=====================================
-        CABEZA DEL MODAL
-        ======================================-->
-
-        <div class="modal-header" style="background:#3c8dbc; color:white">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title">Agregar cliente</h4>
-
-        </div>
-
-        <!--=====================================
-        CUERPO DEL MODAL
-        ======================================-->
-
-        <div class="modal-body">
-
-          <div class="box-body">
-
-            <!-- ENTRADA PARA EL NOMBRE -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar nombre" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL DOCUMENTO ID -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
-
-                <input type="number" min="0" class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar documento" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL EMAIL -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
-
-                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA EL TELÉFONO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
-
-              </div>
-
-            </div>
-
-            <!-- ENTRADA PARA LA DIRECCIÓN -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección" required>
-
-              </div>
-
-            </div>
-
-             <!-- ENTRADA PARA LA FECHA DE NACIMIENTO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevaFechaNacimiento" placeholder="Ingresar fecha nacimiento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required>
-
-              </div>
-
-            </div>
-  
           </div>
 
         </div>
 
-        <!--=====================================
-        PIE DEL MODAL
-        ======================================-->
 
-        <div class="modal-footer">
+      </div>    
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-          <button type="submit" class="btn btn-primary">Guardar cliente</button>
-
-        </div>
-
-      </form>
-
-      <?php
-
-       /*$crearCliente = new ControladorClientes();
-        $crearCliente -> ctrCrearCliente();*/
-
-      ?>
+      
 
     </div>
 
-  </div>
-
+   
+  </section>
+  <!-- /.content -->
 </div>
-  
+<!-- /.content-wrapper -->
